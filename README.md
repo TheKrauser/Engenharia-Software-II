@@ -11,9 +11,9 @@
 O projeto consiste em um aplicativo que visa facilitar várias das necessidades e problemas na área de música envolvendo artistas e empresas. O aplicativo servirá como uma ferramenta para produção de portfólios amplos, desde a parte mais superficial até a mais específica. Funcionará de forma a possibilitar que pessoas ou empresas interessadas possam encontrar e pesquisar por diferentes portfólios de artistas, facilitando a apresentação de possíveis relacionamentos profissionais, além da comunicação e até a contratação de artistas, por isso, o software deverá ter as seguintes características:
 
 * Tipos de perfis:
-  * Gratuito: Qualquer pessoa poderá criar, e nesse caso, as funcionalidades são limitadas;
-  * Artista: Assinantes do serviço, é destinado aos artistas que procuram utilizar a plataforma para fins profissionais; 
-  * Corporativo: Serve para quem busca contratar os serviços de artistas, ou seja, um perfil destinado a empresas, e por esse motivo, é preciso que o usuário comprove, a partir de documentação, a existência de sua empresa ou pessoa.
+  * 🆓 **Gratuito**: Qualquer pessoa poderá criar, e nesse caso, as funcionalidades são limitadas;
+  * 🎨 **Artista**: Assinantes do serviço, é destinado aos artistas que procuram utilizar a plataforma para fins profissionais; 
+  * 💼 **Corporativo**: Serve para quem busca contratar os serviços de artistas, ou seja, um perfil destinado a empresas, e por esse motivo, é preciso que o usuário comprove, a partir de documentação, a existência de sua empresa ou pessoa.
      
 * O artista pode criar seu perfil e personalizá-lo de formas bem flexíveis, tanto para ajudá-lo em seu trabalho quanto para possíveis contratantes visualizá-los, ou seja, ele poderá salvar músicas das quais ele conhece e sabe tocar, áudios relacionados ao instrumental e ao vocal, letras, partituras, além de informações que envolvem marketing, como nome, idade, cidade, experiência, instrumentos que toca, estilo musical, entre outras informações. É preciso destacar que a personalização do perfil será o mais flexível ao usuário, disponibilizando a ele a possibilidade de definir o que ele quer que possa ser visto por outros e o que não poderá. Como a plataforma também servirá como ferramenta profissional, além de salvar os áudios, fotos e textos, também poderá fazer mixagens e algumas edições de áudio.
     
