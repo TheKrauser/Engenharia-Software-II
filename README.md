@@ -7,6 +7,15 @@
 * > 🎮 [Kevin Cairé Leandro](https://github.com/TheKrauser)
 * > 💻 [Pedro Henrique Sardela Correa](https://github.com/PedroHSCorrea)
 
+## Documentação
+> [Modelo de Negócios](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelo%20de%20Neg%C3%B3cios.docx)
+> * Público alvo, formas de monetização, testes, concorrentes e faturamento.
+
+> [Quadro Kanban](https://github.com/users/TheKrauser/projects/1)
+> * Quadro de gerenciamento do projeto, onde serão postadas as atividades a se fazer, em andamento e/ou concluídas.
+
+## Projeto
+
 ### 🎵 Aplicativo de Música 🎵
 O projeto consiste em um aplicativo que visa facilitar várias das necessidades e problemas na área de música envolvendo artistas e empresas. O aplicativo servirá como uma ferramenta para produção de portfólios amplos, desde a parte mais superficial até a mais específica. Funcionará de forma a possibilitar que pessoas ou empresas interessadas possam encontrar e pesquisar por diferentes portfólios de artistas, facilitando a apresentação de possíveis relacionamentos profissionais, além da comunicação e até a contratação de artistas, por isso, o software deverá ter as seguintes características:
 
