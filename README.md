@@ -40,7 +40,7 @@ O projeto consiste em um site que visa facilitar o relacionamento entre artistas
 ## Tecnologias Utilizadas
 > - FrontEnd: **HTML e CSS ou Razor**
 > 
-> - BackEnd: **JavaScript e Angular ou .NET MVC**
+> - BackEnd: **JavaScript e Angular ou C# e .NET MVC**
 >   
 > - Mobile: **---**
 > 
