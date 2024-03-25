@@ -19,7 +19,7 @@
 
 ---
 
-## Projeto
+## LinkArts
 
 ### 🎵 Site de Relacionamento entre Artistas e Empresas 🎵
 O projeto consiste em um site que visa facilitar o relacionamento entre artistas e empresas. O site servirá como um intermédio na comunição entre um artista e um contratante, visando fechar contratos (a partir da plataforma) e definir agendas. Funcionará de forma a possibilitar que pessoas ou empresas interessadas possam encontrar e pesquisar por diferentes portfólios de artistas, facilitando a apresentação de possíveis relacionamentos profissionais, por isso, o software deverá ter as seguintes características:
