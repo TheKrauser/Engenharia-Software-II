@@ -58,7 +58,6 @@ O projeto consiste em um site que visa facilitar o relacionamento entre artistas
 > * Agenda
 
 **- Quantidade de dores (Casos de Uso). Quais Dores?**
-> * Receber Pagamento
 > * Checar Agenda
 > * Enviar Mensagem
 > * Ver Perfil
