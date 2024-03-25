@@ -87,3 +87,5 @@ O projeto consiste em um site que visa facilitar o relacionamento entre artistas
 > * Cadastrar Pagamento
 > * Fechar Contrato
 
+## Casos de Uso
+![Casos de Uso PNG](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/use-cases.png)
