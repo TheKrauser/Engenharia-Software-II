@@ -1,0 +1,46 @@
+@startuml "use-cases"
+left to right direction
+actor Principal as P
+actor Artista as A
+actor Corporativo as C
+
+package Schedule{
+  usecase "Ver Perfil" as verPerfil
+  usecase "Enviar Mensagem" as enviarMensagem
+  usecase "Personalizar Perfil" as personalizarPerfil
+  usecase "Pesquisar Perfil" as pesquisarPerfil
+  usecase "Fechar Contrato" as fecharContrato
+  usecase "Cancelar Contrato" as cancelarContrato
+  usecase "Registrar Músicas" as registrarMusica
+  usecase "Alterar Músicas" as alterarMusica
+  usecase "Apagar Músicas" as apagarMusica
+  usecase "Adicionar Letra" as adicionarLetra
+  usecase "Adicionar Audio" as adicionarAudio
+  usecase "Checar Agenda" as checarAgenda
+  usecase "Receber Pagamento" as receberPagamento
+  usecase "Efetuar Pagamento" as efetuarPagamento
+  usecase "Avaliar Serviço" as avaliarServico
+}
+P <|-right- A
+P <|-right- C
+
+P --> verPerfil
+P --> personalizarPerfil
+P --> pesquisarPerfil
+P --> fecharContrato
+P --> cancelarContrato
+P --> avaliarServico
+P --> checarAgenda
+registrarMusica --> alterarMusica
+registrarMusica --> apagarMusica
+registrarMusica --> adicionarLetra
+registrarMusica --> adicionarAudio
+
+A --> receberPagamento
+
+C --> efetuarPagamento
+
+
+(enviarMensagem) <.up. (verPerfil) : <<extend>>
+(registrarMusica) <.up. (personalizarPerfil) : <<extend>>
+@enduml
