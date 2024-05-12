@@ -40,6 +40,19 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 
 ---
 
+## Modelo de Negócios
+1. **Público-alvo e tamanho do mercado:** O público-alvo inclui tanto músicos individuais quanto empresas que os contratam para eventos ou produções musicais. O tamanho do mercado dependerá da recepção do aplicativo em diferentes setores da indústria musical e da demanda por serviços de artistas.
+   
+2. **Formas de monetização:** As principais formas de monetização serão a cobrança de uma taxa em cima do dinheiro ganho pela contratação do artista e um plano mensal por assinatura, o qual diminuirá a porcentagem da taxa nas vendas e garantirá mais relevância ao artista e mais agendamentos possíveis no mês.
+   
+3. **Formas de degustação e testes:** Limitaremos a quantidade de agendamentos que podem ser feitos no mês, para as contas gratuitas que não possuem nenhum tipo de assinatura, poderão agendar até 5 serviços, e no momento em que o usuário atingir esse limite, será oferecido a ele um teste de 3 meses de algum dos planos disponíveis na plataforma, assim fazendo com que ele tenha um período de testes, e caso goste, venha a se tornar um usuário pagante da plataforma.
+   
+4. **Concorrentes:** Existem várias plataformas no mercado que oferecem serviços semelhantes, tanto de hospedagem de música (SoundCloud e Spotify), quanto de contratação de freelance (Fiverr ou 99freelas). Porém não da para chama-las propriamente de concorrentes, ja que diferem um pouco da proposta da nossa plataforma.
+   
+5. **Faturamento mínimo/Ponto de equilíbrio:** Não temos uma ideia sobre o faturamento necessário para o aplicativo entrar no ponto de equilíbrio.
+
+---
+
 ## Tecnologias Utilizadas
 > - FrontEnd: **HTML e CSS ou Razor**
 > 
