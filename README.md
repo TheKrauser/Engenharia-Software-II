@@ -112,4 +112,4 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 > * Favoritos
 
 ## Casos de Uso
-![Casos de Uso PNG]([https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/use-cases.png](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Novos%20Casos%20de%20Uso/use-cases.png))
+![Casos de Uso PNG]([(https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Novos%20Casos%20de%20Uso/use-cases.png)])
