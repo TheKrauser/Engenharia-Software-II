@@ -1,21 +1,21 @@
 @startuml "use-cases"
 skinparam actorStyle awesome
+'skinparam linetype ortho
 actor Gratuito as P
 actor Artista as A
 actor Corporativo as C
 actor Administrador as ADM
 
-
 package LinkArts{
     usecase "Assinar Plano" as assinarPlano
-    usecase "Enviar Mensagem" as enviarMensagem
+    usecase "Ver Perfil" as verPerfil
     usecase "Criar Perfil Corporativo" as criarCorporativo
     usecase "Cadastrar Estabelecimento" as cadastrarEstabelecimento
     usecase "Personalizar Perfil" as personalizarPerfil
 
     package Perfil{
+        usecase "Enviar Mensagem" as enviarMensagem
         usecase "Pesquisar Perfil" as pesquisarPerfil
-        usecase "Ver Perfil" as verPerfil
         usecase "Denunciar Perfil" as denunciarPerfil
         usecase "Bloquear Usuário" as bloquearUsuario
         usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
@@ -50,45 +50,47 @@ package LinkArts{
         usecase "Avaliar Serviço" as avaliarServico
     }
 
-    package Dashboard{
-        usecase "Abrir Notificações" as abrirNotificacoes
-        usecase "Alterar Configurações da Conta" as alterarConfiguracoes
-        usecase "Alterar Tipo de Perfil" as alterarTipoPerfil
-    }
-
     package Administrador{
         usecase "Bloquear Conta" as bloquearConta
         usecase "Banir Conta" as banirConta
         usecase "Acessar Relatórios" as acessarRelatorio
         usecase "Gerar Relatório" as gerarRelatorio
     }
+
+    package Dashboard{
+        usecase "Abrir Notificações" as abrirNotificacoes
+        usecase "Alterar Configurações da Conta" as alterarConfiguracoes
+        usecase "Alterar Tipo de Perfil" as alterarTipoPerfil
+    }
 }
 
+
+
 left to right direction
-P --> assinarPlano
-A --> Perfil
-A --> personalizarPerfil
-A --> Agenda
-A --> adicionarConta
-A --> receberPagamento
-personalizarPerfil ---> ConteudoPerfil
-A --> Servico
-verPerfil --> enviarMensagem
-A --> criarCorporativo
-A --> Dashboard
+P --> assinarPlano #line:green;line.bold
+A --> verPerfil #line:blue;line.bold
+A --> personalizarPerfil #line:blue;line.bold
+A --> Agenda #line:blue;line.bold
+A --> adicionarConta #line:blue;line.bold
+A --> receberPagamento #line:blue;line.bold
+personalizarPerfil ---> ConteudoPerfil #line.bold
+A --> Servico #line:blue;line.bold
+verPerfil --> Perfil #line.bold
+A --> criarCorporativo #line:blue;line.bold
+A --> Dashboard #line:blue;line.bold
 
-C --> Perfil
-C --> Agenda
-C --> adicionarPagamento
-C --> personalizarPerfil
-C --> excluirPagamento
-C --> efetuarPagamento
-C --> Servico
-C --> cadastrarEstabelecimento
-C --> Dashboard
+C --> Perfil #line:red;line.bold
+C --> Agenda #line:red;line.bold
+C --> adicionarPagamento #line:red;line.bold
+C --> personalizarPerfil #line:red;line.bold
+C --> excluirPagamento #line:red;line.bold
+C --> efetuarPagamento #line:red;line.bold
+C --> Servico #line:red;line.bold
+C --> cadastrarEstabelecimento #line:red;line.bold
+C --> Dashboard #line:red;line.bold
 
-ADM -up-> Administrador
+ADM -up-> Administrador #line:purple;line.bold
 
-A <|-right- P
+A <|-right- P #line.bold
 
 @enduml
