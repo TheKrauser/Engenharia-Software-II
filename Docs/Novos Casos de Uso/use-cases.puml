@@ -1,0 +1,94 @@
+@startuml "use-cases"
+skinparam actorStyle awesome
+actor Gratuito as P
+actor Artista as A
+actor Corporativo as C
+actor Administrador as ADM
+
+
+package LinkArts{
+    usecase "Assinar Plano" as assinarPlano
+    usecase "Enviar Mensagem" as enviarMensagem
+    usecase "Criar Perfil Corporativo" as criarCorporativo
+    usecase "Cadastrar Estabelecimento" as cadastrarEstabelecimento
+    usecase "Personalizar Perfil" as personalizarPerfil
+
+    package Perfil{
+        usecase "Pesquisar Perfil" as pesquisarPerfil
+        usecase "Ver Perfil" as verPerfil
+        usecase "Denunciar Perfil" as denunciarPerfil
+        usecase "Bloquear Usuário" as bloquearUsuario
+        usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
+    }
+
+    package ConteudoPerfil{
+        usecase "Alterar Música" as alterarMusica
+        usecase "Registrar Música" as registrarMusica
+        usecase "Apagar Música" as apagarMusica
+        usecase "Adicionar Letra" as adicionarLetra
+        usecase "Adicionar Audio" as adicionarAudio
+        usecase "Alterar Descrição" as alterarDescricao
+    }
+
+    package Agenda{
+        usecase "Checar Agenda" as checarAgenda
+        usecase "Alterar Agenda" as alterarAgenda
+    }
+
+    package Dinheiro{
+        usecase "Adicionar Conta Bancária" as adicionarConta
+        usecase "Adicionar Opção de Pagamento" as adicionarPagamento
+        usecase "Excluir Opção de Pagamento" as excluirPagamento
+        usecase "Efetuar Pagamento" as efetuarPagamento
+        usecase "Receber Pagamento" as receberPagamento
+    }
+
+    package Servico{
+        usecase "Criar Serviço" as criarServico
+        usecase "Aceitar Serviço" as aceitarServico
+        usecase "Cancelar Serviço" as cancelarServico
+        usecase "Avaliar Serviço" as avaliarServico
+    }
+
+    package Dashboard{
+        usecase "Abrir Notificações" as abrirNotificacoes
+        usecase "Alterar Configurações da Conta" as alterarConfiguracoes
+        usecase "Alterar Tipo de Perfil" as alterarTipoPerfil
+    }
+
+    package Administrador{
+        usecase "Bloquear Conta" as bloquearConta
+        usecase "Banir Conta" as banirConta
+        usecase "Acessar Relatórios" as acessarRelatorio
+        usecase "Gerar Relatório" as gerarRelatorio
+    }
+}
+
+left to right direction
+P --> assinarPlano
+A --> Perfil
+A --> personalizarPerfil
+A --> Agenda
+A --> adicionarConta
+A --> receberPagamento
+personalizarPerfil ---> ConteudoPerfil
+A --> Servico
+verPerfil --> enviarMensagem
+A --> criarCorporativo
+A --> Dashboard
+
+C --> Perfil
+C --> Agenda
+C --> adicionarPagamento
+C --> personalizarPerfil
+C --> excluirPagamento
+C --> efetuarPagamento
+C --> Servico
+C --> cadastrarEstabelecimento
+C --> Dashboard
+
+ADM -up-> Administrador
+
+A <|-right- P
+
+@enduml
