@@ -105,6 +105,7 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 
 **- Quantidade de relatórios. Quais relatórios?**
 > * Ganhos
+> * Acessos no Perfil
 > * Agendamentos
 > * Contas Criadas
 > * Usuários Assinantes
@@ -115,7 +116,6 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 > * Configurações
 > * Agenda
 > * Perfil
-> * Serviço
 > * Cadastrar Pagamento
 > * Fechar Contrato
 > * Tela geral de Administração
