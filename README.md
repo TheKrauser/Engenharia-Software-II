@@ -126,3 +126,6 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 
 ## Casos de Uso
 ![Casos de Uso PNG](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Novos%20Casos%20de%20Uso/use-casesOrtho.png)
+
+## FIGMA
+https://www.figma.com/design/BRoiYt1BJheIFoW5c0mQom/Untitled?node-id=0%3A1&t=kMtD7no5nZ4mCh10-1
