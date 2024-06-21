@@ -1,0 +1,43 @@
+@startuml "use-cases"
+'skinparam actorStyle awesome
+'skinparam linetype ortho
+
+actor Corporativo as C
+
+package LinkArts{
+    usecase "Ver Perfil" as verPerfil
+    usecase "Personalizar Perfil" as personalizarPerfil
+    usecase "Enviar Mensagem" as enviarMensagem
+    usecase "Pesquisar Perfil" as pesquisarPerfil
+    usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
+    usecase "Alterar Descrição" as alterarDescricao
+    usecase "Alterar Informações de Funcionamento" as alterarFuncionamento
+    usecase "Checar Agenda" as checarAgenda
+    usecase "Alterar Agenda" as alterarAgenda
+    usecase "Efetuar Pagamento" as efetuarPagamento
+    usecase "Criar Serviço" as criarServico
+    usecase "Aceitar Serviço" as aceitarServico
+    usecase "Cancelar Serviço" as cancelarServico
+    usecase "Avaliar Serviço" as avaliarServico
+    usecase "Bloquear Usuário" as bloquearUsuario
+    usecase "Cadastrar Estabelecimento" as cadastrarEstabelecimento
+}
+
+C --> verPerfil
+verPerfil --> personalizarPerfil
+personalizarPerfil --> alterarDescricao
+personalizarPerfil --> alterarFuncionamento
+verPerfil --> checarAgenda
+checarAgenda --> alterarAgenda
+checarAgenda --> aceitarServico
+checarAgenda --> cancelarServico
+checarAgenda --> avaliarServico
+aceitarServico --> efetuarPagamento
+C --> pesquisarPerfil
+pesquisarPerfil --> adicionarFavoritos
+pesquisarPerfil --> enviarMensagem
+pesquisarPerfil --> criarServico
+pesquisarPerfil --> bloquearUsuario
+C --> cadastrarEstabelecimento
+
+@enduml
