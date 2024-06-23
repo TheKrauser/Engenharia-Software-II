@@ -1,67 +1,59 @@
 @startuml "Artista"
 'skinparam actorStyle awesome
 'skinparam linetype ortho
+left to right direction
 
 actor Gratuito as G
 actor Artista as A
 'actor Corporativo as C
 'actor Administrador as ADM
 
-package LinkArts{
-    usecase "Assinar Plano" as assinarPlano
-    usecase "Ver Perfil" as verPerfil
-    usecase "Personalizar Perfil" as personalizarPerfil
-    usecase "Enviar Mensagem" as enviarMensagem
-    usecase "Pesquisar Perfil" as pesquisarPerfil
-    usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
-    usecase "Alterar Música" as alterarMusica
-    usecase "Registrar Música" as registrarMusica
-    usecase "Apagar Música" as apagarMusica
-    usecase "Adicionar Letra" as adicionarLetra
-    usecase "Adicionar Audio" as adicionarAudio
-    usecase "Adicionar Proficiências" as adicionarProf
-    usecase "Alterar Descrição" as alterarDescricao
-    usecase "Checar Agenda" as checarAgenda
-    usecase "Alterar Agenda" as alterarAgenda
-    usecase "Efetuar Pagamento" as efetuarPagamento
-    usecase "Receber Pagamento" as receberPagamento
-    usecase "Criar Serviço" as criarServico
-    usecase "Aceitar Serviço" as aceitarServico
-    usecase "Cancelar Serviço" as cancelarServico
-    usecase "Avaliar Serviço" as avaliarServico
-    usecase "Bloquear Usuário" as bloquearUsuario
-    'usecase "Cadastrar Estabelecimento" as cadastrarEstabelecimento
-    'usecase "Bloquear Conta" as bloquearConta
-    'usecase "Banir Conta" as banirConta
-    'usecase "Acessar Relatórios" as acessarRelatorio
-    'usecase "Gerar Relatório" as gerarRelatorio
-}
+usecase "Assinar Plano" as assinarPlano
+usecase "Ver Perfil" as verPerfil
+usecase "Personalizar Perfil" as personalizarPerfil
+usecase "Enviar Mensagem" as enviarMensagem
+usecase "Pesquisar Perfil" as pesquisarPerfil
+usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
+usecase "Alterar Música" as alterarMusica
+usecase "Gerenciar Músicas" as gerenciarMusica
+usecase "Registrar Música" as registrarMusica
+usecase "Apagar Música" as apagarMusica
+usecase "Adicionar Letra" as adicionarLetra
+usecase "Adicionar Audio" as adicionarAudio
+usecase "Adicionar Proficiências" as adicionarProf
+usecase "Alterar Descrição" as alterarDescricao
+usecase "Checar Agenda" as checarAgenda
+usecase "Alterar Agenda" as alterarAgenda
+usecase "Receber Pagamento" as receberPagamento
+usecase "Criar Serviço" as criarServico
+usecase "Aceitar Serviço" as aceitarServico
+usecase "Cancelar Serviço" as cancelarServico
+usecase "Avaliar Serviço" as avaliarServico
+usecase "Bloquear Usuário" as bloquearUsuario
 
 G --> assinarPlano
-P --> verPerfil
-verPerfil --> personalizarPerfil
-personalizarPerfil --> alterarDescricao
-personalizarPerfil --> adicionarProf
-verPerfil --> registrarMusica
-verPerfil --> checarAgenda
-checarAgenda --> alterarAgenda
-checarAgenda --> aceitarServico
-checarAgenda --> cancelarServico
-checarAgenda --> avaliarServico
-registrarMusica --> alterarMusica
-registrarMusica --> apagarMusica
-registrarMusica --> adicionarLetra
-registrarMusica --> adicionarAudio
-P --> receberPagamento
-P --> pesquisarPerfil
-pesquisarPerfil --> adicionarFavoritos
-pesquisarPerfil --> enviarMensagem
-pesquisarPerfil --> criarServico
-pesquisarPerfil --> bloquearUsuario
+A --> verPerfil
+A --> receberPagamento
+A --> pesquisarPerfil
+verPerfil <.. gerenciarMusica : <<extend>>
+verPerfil <.. checarAgenda : <<extend>>
+verPerfil <.. personalizarPerfil : <<extend>>
+personalizarPerfil <.. alterarDescricao : <<extend>>
+personalizarPerfil <.. adicionarProf : <<extend>>
+checarAgenda <.. alterarAgenda : <<extend>>
+checarAgenda <.. aceitarServico : <<extend>>
+checarAgenda <.. cancelarServico : <<extend>>
+checarAgenda <.. avaliarServico : <<extend>>
+gerenciarMusica <.. registrarMusica : <<extend>>
+gerenciarMusica <.. alterarMusica : <<extend>>
+gerenciarMusica <.. apagarMusica : <<extend>>
+registrarMusica ..> adicionarLetra : <<include>>
+registrarMusica ..> adicionarAudio : <<include>>
+verPerfil <.. adicionarFavoritos : <<extend>>
+verPerfil <.. enviarMensagem : <<extend>>
+verPerfil <.. criarServico : <<extend>>
+verPerfil <.. bloquearUsuario : <<extend>>
 
-A <|-right- G
-
-'C --> cadastrarEstabelecimento
-'C --> efetuarPagamento
+A <|-left- G
 
 @enduml
