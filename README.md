@@ -54,13 +54,13 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 ---
 
 ## Tecnologias Utilizadas
-> - FrontEnd: **HTML e CSS ou Razor**
+> - FrontEnd: **HTML, CSS e Bootstrap**
 > 
-> - BackEnd: **JavaScript e Angular ou C# e .NET MVC**
+> - BackEnd: **JavaScript e Angular**
 >   
 > - Mobile: **---**
 > 
-> - Banco de Dados: **MySQL ou Oracle SQL**
+> - Banco de Dados: **Oracle SQL**
 
 ---
 
