@@ -19,6 +19,6 @@ verPerfil <.. banirConta : <<extend>>
 verPerfil <.. bloquearConta : <<extend>>
 ADM --> pesquisarPerfil
 ADM --> acessarRelatorio
-verPerfil <.. gerarRelatorio : <<extend>>
+ADM --> gerarRelatorio
 
 @enduml
