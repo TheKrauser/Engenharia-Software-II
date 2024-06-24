@@ -17,6 +17,12 @@
 > [Quadro Kanban](https://github.com/users/TheKrauser/projects/1)
 > * Quadro de gerenciamento do projeto, onde serão postadas as atividades a se fazer, em andamento e/ou concluídas.
 
+> [Telas no FIGMA](https://www.figma.com/design/BRoiYt1BJheIFoW5c0mQom/Untitled?node-id=0%3A1&t=kMtD7no5nZ4mCh10-1)
+> * Prótotipo inicial das telas feito usando a plataforma FIGMA (já conta com navegação entre as telas).
+
+> [Vídeo Apresentação](https://www.youtube.com/watch?v=9WckvqF2aDU)
+> * Vídeo explicando o projeto, funcionalidades, diagramas e jornadas do usuário.
+
 ---
 
 ## LinkArts
@@ -125,7 +131,25 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 > * Favoritos
 
 ## Casos de Uso
-![Casos de Uso PNG](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Novos%20Casos%20de%20Uso/use-casesOrtho.png)
+* Perfil Artista e Gratuito
+  
+![Casos de Uso Artista](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Artista.png)
 
-## FIGMA
-https://www.figma.com/design/BRoiYt1BJheIFoW5c0mQom/Untitled?node-id=0%3A1&t=kMtD7no5nZ4mCh10-1
+* Perfil Corporativo
+  
+![Casos de Uso Corporativo](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Corporativo.png)
+
+* Perfil Administrador
+  
+![Casos de Uso Administrador](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Admin.png)
+
+## Diagramas
+
+• Diagrama Conceitual
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Modelo%20Conceitual.png)
+
+• Diagrama Lógico
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Modelo%20Lógico.png)
+
+• Diagrama de Classes
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Diagrama%20de%20Classes%20UML.png)
