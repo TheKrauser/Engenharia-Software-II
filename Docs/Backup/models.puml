@@ -1,0 +1,62 @@
+@startuml "model"
+
+class Artista {
+    codArtista: Long
+    name : String
+    cpf : String
+    cidade : String
+    descricao : String
+    foto : Long
+}   
+
+class Musica {
+    codMusica : Long
+    nome : String
+    descricao : String
+    letra : String
+    audio : Long
+    imagem : Long
+}
+
+class Estilo {
+    codEstilo : Long
+    nome : String
+}
+
+class Album {
+    codAlbum : Long
+    nome : String
+    descricao : String
+    imagem : Long
+}
+
+class Estabelecimento {
+    codEstabelecimento : Long
+    nome : String
+    cnpj : String
+    endereco : String
+    cidade : String
+    funcionamento : String
+    descricao : String
+    foto : Long
+}
+
+class RedeSocial {
+    codRede : Long
+    link : String
+}
+
+class Mensagem {
+    codMensagem : Long
+    remetente : Long
+    destinatario : Long
+    conteudo : String
+    dataEnvio : LocalTime
+    status : ENVIADA | NÃO ENVIADA | APAGADA
+}
+
+class Conversa {
+    codConversa : Long
+}
+
+@enduml

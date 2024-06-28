@@ -1,0 +1,49 @@
+@startuml "Artista"
+left to right direction
+
+actor Gratuito as G
+actor Artista as A
+
+usecase "Assinar Plano" as assinarPlano
+usecase "Acessar Perfil" as acessarPerfil
+usecase "Personalizar Perfil" as personalizarPerfil
+usecase "Enviar Mensagem" as enviarMensagem
+usecase "Pesquisar Perfil" as pesquisarPerfil
+usecase "Adicionar Perfil aos Favoritos" as adicionarFavoritos
+usecase "Alterar Música" as alterarMusica
+usecase "Gerenciar Músicas" as gerenciarMusica
+usecase "Registrar Música" as registrarMusica
+usecase "Apagar Música" as apagarMusica
+usecase "Adicionar Letra" as adicionarLetra
+usecase "Adicionar Audio" as adicionarAudio
+usecase "Alterar Descrição" as alterarDescricao
+usecase "Checar Agenda" as checarAgenda
+usecase "Alterar Agenda" as alterarAgenda
+usecase "Criar Serviço" as criarServico
+usecase "Aceitar Serviço" as aceitarServico
+usecase "Cancelar Serviço" as cancelarServico
+usecase "Avaliar Serviço" as avaliarServico
+
+G --> assinarPlano
+A --> acessarPerfil
+A --> pesquisarPerfil
+A --> gerenciarMusica
+A --> checarAgenda
+A --> personalizarPerfil
+A --> alterarDescricao
+A --> alterarAgenda
+A --> aceitarServico
+A --> cancelarServico
+A --> avaliarServico
+A --> registrarMusica
+A --> alterarMusica
+A --> apagarMusica
+A --> adicionarLetra
+A --> adicionarAudio
+A --> adicionarFavoritos
+A --> enviarMensagem
+A --> criarServico
+
+A <|-left- G
+
+@enduml

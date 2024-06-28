@@ -1,0 +1,20 @@
+@startuml "Admin"
+left to right direction
+
+actor Administrador as ADM
+
+usecase "Acessar Perfil" as verPerfil
+usecase "Enviar Mensagem" as enviarMensagem
+usecase "Pesquisar Perfil" as pesquisarPerfil
+usecase "Alterar Perfil de Usuário" as alterarPerfilUser
+usecase "Acessar Relatórios" as acessarRelatorio
+usecase "Gerar Relatório" as gerarRelatorio
+
+ADM --> verPerfil
+ADM --> enviarMensagem
+ADM --> alterarPerfilUser
+ADM --> pesquisarPerfil
+ADM --> acessarRelatorio
+ADM --> gerarRelatorio
+
+@enduml
