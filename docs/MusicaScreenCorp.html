@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkArts/PerfilArtista/AdicionarMusica</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+  <style>
+    .dropbtn {
+      user-select: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 1rem;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: .3rem
+    }
+
+    .dropbtn:focus {
+      box-shadow: 0 0 0 .3rem #4CAF50AA;
+    }
+
+    .dropbtn:active {
+      box-shadow: 0 0 0 .4rem #4CAF50aa;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 3.5rem;
+      left: 1rem;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 0 .1rem 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+    .music-player {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: auto;
+  display: block;
+  width: 472px;
+  height: 515px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.player-main {
+  position: relative;
+  width: 100%;
+  min-width: 472px;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: rgba(230, 219, 241, 0.8);
+}
+
+.main-current {
+  margin-bottom: 36px;
+}
+.main-current .current-keyvisual {
+  position: relative;
+  display: inline-block;
+}
+.main-current .current-keyvisual img {
+  position: relative;
+  z-index: 2;
+  width: 132px;
+  height: auto;
+  border-radius: 4px;
+}
+.main-current .current-keyvisual:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 95%;
+  height: 80%;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-photo.png);
+  background-size: cover;
+  -webkit-filter: blur(35px);
+          filter: blur(35px);
+}
+.main-current .current-info {
+  display: inline-block;
+  padding: 15px 0 0 24px;
+  box-sizing: content-box;
+  vertical-align: top;
+}
+.main-current .current-info h1, .main-current .current-info p {
+  margin: auto;
+  padding: 0;
+}
+.main-current .current-info h1 {
+  margin-bottom: 13px;
+  font-size: 20px;
+  color: #26107B;
+}
+.main-current .current-info p {
+  font-size: 12px;
+  color: #26107B;
+}
+
+.main-control {
+  position: relative;
+  line-height: 0;
+}
+.main-control .btn {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  vertical-align: middle;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  opacity: .75;
+}
+.main-control .btn:hover {
+  opacity: 1;
+}
+.main-control .btn._previous {
+  margin-right: 17px;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-previous.svg");
+  background-size: auto 80%;
+}
+.main-control .btn._pause {
+  margin-right: 17px;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-pause.svg");
+}
+.main-control .btn._next {
+  margin-right: 24px;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/329679/music-player-freebie-next.svg");
+  background-size: auto 80%;
+}
+.main-control .btn._timeline {
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+  opacity: 1;
+}
+.main-control .btn._timeline > span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #26107B;
+}
+.main-control .btn._timeline > span.timescope {
+  position: relative;
+  margin: auto 12px;
+  width: 180px;
+  height: 3px;
+  border-radius: 20px;
+}
+.main-control .btn._timeline > span.timescope:before, .main-control .btn._timeline > span.timescope:after,
+.main-control .btn._timeline > span.timescope .timescope-dot {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 0;
+  height: 100%;
+  background-color: #26107B;
+  cursor: pointer;
+  z-index: 1;
+}
+.main-control .btn._timeline > span.timescope:before {
+  width: 100%;
+  opacity: .2;
+}
+.main-control .btn._timeline > span.timescope:after {
+  width: 63%;
+}
+.main-control .btn._timeline > span.timescope .timescope-dot {
+  top: -2.5px;
+  left: 63%;
+  z-index: 3;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.player-list {
+  margin: auto;
+  min-width: 472px;
+  padding: 24px;
+  background: #fff;
+  list-style: none;
+}
+.player-list li {
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+.player-list li .list-cover,
+.player-list li .list-info {
+  display: inline-block;
+  vertical-align: middle;
+}
+.player-list li .list-cover.list-cover,
+.player-list li .list-info.list-cover {
+  margin-right: 9px;
+  width: 39px;
+  height: auto;
+  border-radius: 100%;
+}
+.player-list li .list-cover.list-info .info-title,
+.player-list li .list-info.list-info .info-title {
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: #8D8D8D;
+}
+.player-list li .list-cover.list-info .info-artist,
+.player-list li .list-info.list-info .info-artist {
+  font-size: 10px;
+  color: #cdcdcd;
+}
+.player-list li:last-child {
+  margin-bottom: 0;
+}
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand me-6 pt-2" href="DashBoard.html" style="font-size: 28px;">LinkArts</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex">
+            <input class="form-control me-2 pt-2" type="search" placeholder="Pesquisar Perfil" aria-label="Search"
+              style="width: 723px;">
+              <button class="btn btn-outline-primary" style="margin-left: 25px; width: 100px;">
+                <a href="PesquisadoScreenCorp.html">
+                  Pesquisar
+                </a>
+              </button>
+          </form>
+        </div>
+        <a href="DashBoard.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="70" height="60" fill="white"
+            class="bi bi-c-square-fill pt-2 mt-2" viewBox="0 0 16 16">
+            <path
+              d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
+          </svg>
+        </a>
+        <div class="dropdown show">
+          <a class="dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white"
+                class="bi bi-suit-heart-fill pt-3 mt-2" viewBox="0 0 16 16">
+                <path
+                  d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1" />
+              </svg>
+            </div>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="Perfil_Corp.html">Frank Artanis</a>
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <div class="dropdown show">
+            <a class="dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white"
+                  class="bi bi-bell-fill  pt-3 mt-2" viewBox="0 0 16 16">
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+                </svg>
+              </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="PropostasCorp.html">Req. para Frank Artanis Enviada</a>
+              <a class="dropdown-item" href="ChatScreenCorp.html">Mensagem de Frank Artanis</a>
+            </div>
+            <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+              style="position: absolute; top: 24px; left: 40px;">
+              99+
+            </span>
+          </div>
+        </div>
+
+        <div class="position-relative">
+          <a href="ChatScreenCorp.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white"
+              class="bi bi-envelope pt-3 mt-2 position-relative" viewBox="0 0 16 16">
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+            </svg>
+
+            <span class="position-absolute translate-middle badge rounded-pill bg-danger"
+              style="position: absolute; top: 24px; left: 40px;">
+              99+
+            </span>
+          </a>
+        </div>
+
+        <a href="./CorpSelf.html"> <img src="./img/image.png" alt="" class="img-fluid mt-2 pt-3"
+            style="width: auto; height: 60px; border-radius: 24px; margin-left: 15px;">
+        </a>
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="my-5">
+
+    <div class="container">
+
+      <div class="row my-5">
+
+
+        <div class="col align-content-center my-3">
+
+          <h1 style="margin-left: 400px;">Ultimate Christmas</h1>
+
+        </div>
+
+      </div>
+
+      <div class="row my-5">
+
+        <div class="col">
+
+          <img src="./img/cover.webp" alt="" style="width: auto; height: 300px; border-radius: 10px;" class="img-fluid">
+
+        </div>
+
+
+        <div class="col pt-3">
+
+          <form>
+            <div class="form-group">
+              <h2 class="text-primary mb-4" for="exampleInputEmail1">Descrição</h2>
+              <p class="border p-3" style="border-radius: 10px;">Música autoral feita em homenagem a todas as pessoas
+                que sofreram com acidentes de transito ou que gostam muito de cookies e doces no geral.</p>
+            </div>
+
+          </form>
+
+          <br>
+
+          <h2 class="my-1 text-primary mb-4">Album</h2>
+
+                <a href="AlbumScreenCorp.html"><button class="btn">
+                    <li class="list-group-item">Smile (sorreia)</li>
+                  </button></a>
+          <h2 class="text-primary mt-5">Partitura</h2>
+          <div class="bg-primary text-white my-3 text-center card mb-5">
+
+            <div class="card-body">
+
+              <img src="./img/p1.JPG" alt="" class="pt-3" style="width: auto; height: 180px;">
+
+              <img src="./img/p2.JPG" alt="" class=" pt-3" style="width: auto; height: 180px;">
+
+            </div>
+
+          </div>
+          <div class="music-player">
+            <div class="player-main">
+              <div class="main-current">
+                <div class="current-keyvisual">
+                  <img src="./img/mscimg.jpg" />
+                </div>
+                <div class="current-info">
+                  <h1>Ultimate Christmas</h1>
+                  <p>Frank Artanis</p>
+                </div>
+              </div>
+              <div class="main-control">
+                <div class="btn _previous">
+                </div>
+                <div class="btn _pause">
+                </div>
+                <div class="btn _next">
+                </div>
+                <div class="btn _timeline">
+                  <span class="current-time">2:32</span>
+                  <span class="timescope">
+                    <span class="timescope-dot"></span>
+                  </span>
+                  <span class="end-time">4:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col pt-3">
+          <h2 class="ml-3 text-primary mb-4">Tags</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Pagode</li>
+            <li class="list-group-item">Cavaquinho</li>
+          </ul>
+          <br>
+          <h2 class="text-primary mt-5">Letra</h2>
+          <div class="text-center mt-4">
+            She was more like a beauty queen from a movie scene
+            I said don't mind, but what do you mean, I am the one
+            Who will dance on the floor in the round?
+            She said I am the one, who will dance on the floor in the round
+            She told me her name was Billie Jean, as she caused a scene
+            Then every head turned with eyes that dreamed of being the one
+            Who will dance on the floor in the round
+            People always told me be careful of what you do
+            And don't go around breaking young girls' hearts
+            And mother always told me be careful of who you love
+            And be careful of what you do 'cause the lie becomes the truth
+            Billie Jean is not my lover
+            She's just a girl who claims that I am the one
+            But the kid is not my son
+            She says I am the one, but the kid is not my son
+            For forty days and forty nights
+            The law was on her side
+            But who can stand when she's in demand
+            Her schemes and plans
+            'Cause we danced on the floor in the round
+            So take my strong advice, just remember to always think twice
+            (Do think twice, do think twice)
+            She told my baby we'd danced 'til three, then she looked at me
+            Then showed a photo my baby cried his eyes were like mine (oh, no)
+            'Cause we danced on the floor in the round, baby
+            People always told me be careful of what you do
+            And don't go around breaking young girls' hearts
+            She came and stood right by me
+            Just the smell of sweet perfume
+            This happened much too soon
+            She called me to her room
+            Billie Jean is not my lover
+            She's just a girl who claims that I am the one
+            But the kid is not my son
+            Billie Jean is not my lover
+            She's just a girl who claims that I am the one
+            But the kid is not my son
+            She says I am the one, but the kid is not my son
+            She says I am the one, but the kid is not my son
+            Billie Jean is not my lover
+            She's just a girl who claims that I am the one
+            But the kid is not my son
+            She says I am the one, but the kid is not my son
+            She says I am the one
+            You know what you did, (she says he is my son) breaking my heart babe
+            She says I am the one
+            Billie Jean is not my lover
+            Billie Jean is not my lover
+            Billie Jean is not my lover
+            Billie Jean is not my lover (don't Billie Jean)
+            Billie Jean is not my lover
+            Billie Jean is not my lover
+          </div>
+        </div>
+
+
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="bg-secondary bg-opacity-25 py-5">
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <h5 class="pb-3 text-primary"><i class="fa-solid fa-user-group pe-1"></i>Sobre Nós</h5>
+            <span class="text-black">O projeto consiste em um site que visa facilitar o relacionamento entre músicos e
+              empresas. O site servirá como um intermédio na comunição entre o artista e um contratante, visando fechar
+              contratos (podendo ser realizado dentro da plataforma) e definir agendas. Funcionará de forma a
+              possibilitar que pessoas ou empresas interessadas possam encontrar e pesquisar por diferentes portfólios
+              de músicos, facilitando a apresentação de possíveis relacionamentos profissionais, por isso, o software
+              deverá ter as seguintes características:</span>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <h5 class="pb-3 text-primary"><i class="fa-solid fa-link pe-1"></i>Links Importantes</h5>
+            <ul>
+              <li><a href="#" class="text-decoration-none link-info">About us</a></li>
+              <li><a href="#" class="text-decoration-none link-info">Privacy policy</a></li>
+              <li><a href="#" class="text-decoration-none link-info">Terms of services</a></li>
+            </ul>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <h5 class="pb-3 text-primary"><i class="fa-solid fa-location-dot pe-1"></i>Nossa Localização</h5>
+            <span class="text-black">
+              Fatec-Sorocaba
+            </span>
+          </div>
+          <div class="col-xl-3 col-md-6 col-sm-12">
+            <h5 class="pb-5 text-primary"><i class="fa-solid fa-paper-plane pe-1"></i>Mantenha-se Atualizado<h5>
+                <form>
+                  <input type="text" class="w-100 mb-2 form-control" name="" placeholder="Email ID">
+                  <button class="w-100 btn btn-warning">Cadastre-se</button>
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-dark py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a class="btn btn-outline-success" href="#"><i
+                    class="fa-brands fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a class="btn btn-outline-success" href="#"><i
+                    class="fa-brands fa-youtube"></i></a></li>
+              <li class="list-inline-item"><a class="btn btn-outline-success" href="#"><i
+                    class="fa-brands fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a class="btn btn-outline-success" href="#"><i
+                    class="fa-brands fa-linkedin-in"></i></a></li>
+              <li class="list-inline-item"><a class="btn btn-outline-success" href="#"><i
+                    class="fa-brands fa-github"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-sm-12"><span class="text-success pt-4 float-md-end float-sm-start">Copyright &copy;
+              2024</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
