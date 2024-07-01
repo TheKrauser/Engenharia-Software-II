@@ -133,23 +133,26 @@ O projeto consiste em um site que visa facilitar o relacionamento entre músicos
 ## Casos de Uso
 * Perfil Artista e Gratuito
   
-![Casos de Uso Artista](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Artista.png)
+![Casos de Uso Artista](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Casos%20de%20Uso/Artista.png)
 
 * Perfil Corporativo
   
-![Casos de Uso Corporativo](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Corporativo.png)
+![Casos de Uso Corporativo](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Casos%20de%20Uso/Corporativo.png)
 
 * Perfil Administrador
   
-![Casos de Uso Administrador](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Casos%20de%20Uso/Admin.png)
+![Casos de Uso Administrador](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Casos%20de%20Uso/Admin.png)
 
 ## Diagramas
 
-• Diagrama Conceitual
-![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Modelo%20Conceitual.png)
+• Diagrama E/R
+
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Diagramas/Conceitual_1.png)
 
 • Diagrama Lógico
-![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Modelo%20Lógico.png)
+
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Diagramas/L%C3%B3gico_1.png)
 
 • Diagrama de Classes
-![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/Docs/Modelos/Diagrama%20de%20Classes%20UML.png)
+
+![Modelo Conceitual](https://github.com/TheKrauser/Engenharia-Software-II/blob/main/docs/Diagramas/model.png)
