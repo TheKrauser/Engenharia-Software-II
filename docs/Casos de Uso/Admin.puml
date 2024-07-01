@@ -3,20 +3,16 @@ left to right direction
 
 actor Administrador as ADM
 
-usecase "Ver Perfil" as verPerfil
+usecase "Acessar Perfil" as verPerfil
 usecase "Enviar Mensagem" as enviarMensagem
 usecase "Pesquisar Perfil" as pesquisarPerfil
 usecase "Alterar Perfil de Usuário" as alterarPerfilUser
-usecase "Bloquear Conta" as bloquearConta
-usecase "Banir Conta" as banirConta
 usecase "Acessar Relatórios" as acessarRelatorio
 usecase "Gerar Relatório" as gerarRelatorio
 
 ADM --> verPerfil
-verPerfil <.. enviarMensagem : <<extend>>
-verPerfil <.. alterarPerfilUser : <<extend>>
-verPerfil <.. banirConta : <<extend>>
-verPerfil <.. bloquearConta : <<extend>>
+ADM --> enviarMensagem
+ADM --> alterarPerfilUser
 ADM --> pesquisarPerfil
 ADM --> acessarRelatorio
 ADM --> gerarRelatorio
